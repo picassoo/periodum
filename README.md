@@ -8,7 +8,7 @@
 # docker dizinine gidip aşağıdaki komutu çalıştırmanız yeterlidir.
 # lokalde docker ve docker-compose yüklü olmalı
 
-$  docker compose up
+$  docker-compose up
 
 # install dependencies
 $ npm install
