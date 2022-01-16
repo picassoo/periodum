@@ -90,3 +90,7 @@ sw.*
 
 # Vim swap files
 *.swp
+
+# database files
+docker/data/*
+docker/db.sql

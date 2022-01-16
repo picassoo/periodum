@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+
+  mysql-development:
+    image: mysql:8.0.17
+    environment:
+      MYSQL_ROOT_PASSWORD: user
+      MYSQL_DATABASE: periodum
+      MYSQL_USER: user
+      MYSQL_PASSWORD: 123456
+    volumes:
+      - ./db.sql:/docker-entrypoint-initdb.d/dump.sql
+      - ./data:/var/lib/mysql:rw
+    networks:
+      - periodum-network
+    ports:
+      - "3306:3306"
+  admin:    
+    image: adminer    
+    ports:      
+      - "8090:8080"
+    networks:
+      - periodum-network
+    depends_on: 
+      - mysql-development
+networks:
+  periodum-network:
+    driver: bridge
